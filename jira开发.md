@@ -6,8 +6,15 @@ _width: wide
 
 ## 1 离线atlas-debug -o
 
-Get-Content "F:\jira\atlassian-plugin\jiraLocalServer\target\jira\home\log\atlassian-jira.log" -Tail 200 | Select-String "ERROR" -\
-Context 5读取错误日志
+Get-Content "F:\jira\atlassian-plugin\jiraLocalServer\target\jira\home\log\atlassian-jira.log" -Tail 200 | Select-String "ERROR" -Context 5读取错误日志
+
+| **组件**        | **版本**    | **安装路径**                         |
+| ------------- | --------- | -------------------------------- |
+| **ATLAS SDK** | 8.2.7     | `F:\jira\sdk`                    |
+| **AMPS**      | 8.1.2     | （内置在 SDK 中）                      |
+| **Maven**     | 3.5.4     | `F:\jira\sdk\apache-maven-3.5.4` |
+| **JDK**       | 1.8.0_131 | `F:\jira\jdk`                    |
+| **JRE**       | 1.8.0_131 | `F:\jira\jdk\jre`                |
 
 ## 2 用户路径文件夹下（C:\Users\shadow light.m2）修改settings.xml配置仓库路径
 
@@ -107,11 +114,11 @@ Context 5读取错误日志
 
 这些模块提供了更深层次、更灵活的集成能力。
 
-| **模块 (Module)**                         | **作用**                                                | **就像...**                    |
-| --------------------------------------- | ----------------------------------------------------- | ---------------------------- |
-| `module-type`                           | 这种模块极其强大，它可以动态地为插件框架本身**注册一个全新的模块类型**，极大拓展了系统的可能性。    | 一种**改变规则的规则**，让你能发明全新的插件零件。  |
-| `servlet-context-listener`              | 注册一个 `ServletContextListener`，可以在插件或整个应用启动、关闭时执行特定代码。 | 一个**自动守卫**，应用一启动，它就自动开始工作。   |
-| `servlet-context-param`                 | 为插件的 Servlet、过滤器等设置共享的上下文初始化参数。                       | 给共享工具台设置一个**公告板**，上面有全局配置信息。 |
+| **模块 (Module)**               | **作用**                                                | **就像...**                    |
+| ----------------------------- | ----------------------------------------------------- | ---------------------------- |
+| `module-type`                 | 这种模块极其强大，它可以动态地为插件框架本身**注册一个全新的模块类型**，极大拓展了系统的可能性。    | 一种**改变规则的规则**，让你能发明全新的插件零件。  |
+| `servlet-context-listener`    | 注册一个 `ServletContextListener`，可以在插件或整个应用启动、关闭时执行特定代码。 | 一个**自动守卫**，应用一启动，它就自动开始工作。   |
+| `servlet-context-param`       | 为插件的 Servlet、过滤器等设置共享的上下文初始化参数。                       | 给共享工具台设置一个**公告板**，上面有全局配置信息。 |
 | `rpc-soap` **/** `rpc-xmlrpc` | 部署一个 SOAP 或 XML-RPC 服务，这是较老的远程调用方式。                   | 一个**老式电话亭**，外部系统能通过它拨入 Jira。 |
 
 ### 4.1 demo1
