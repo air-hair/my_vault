@@ -11,6 +11,5 @@ sudo cp /path/to/docker-compose-linux-x86_64 /usr/local/bin/docker-compose\
 \
 *# 添加执行权限*\
 sudo chmod +x /usr/local/bin/docker-compose\
-\
 *# 验证版本*\
 docker-compose --version
